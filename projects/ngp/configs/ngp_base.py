@@ -60,9 +60,9 @@ dataset = dict(
     ),
 )
 
-exp_name = "lego"
+exp_name = "lego_1000"
 log_dir = "./logs"
-tot_train_steps = 40000
+tot_train_steps = 1000
 # Background color, value range from 0 to 1
 background_color = [0, 0, 0]
 # Hash encoding function used in Instant-NGP
@@ -77,7 +77,7 @@ target_batch_size = 1<<18
 # Set const_dt=False for faster convergence
 const_dt=True
 # Use fp16 for faster training
-fp16 = True
+fp16 = False
 # Load pre-trained model
 load_ckpt = False
 # path of checkpoint file, None for default path

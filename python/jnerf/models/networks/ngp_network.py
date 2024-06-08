@@ -59,6 +59,8 @@ class NGPNetworks(nn.Module):
             self.density_mlp = nn.Sequential(
                 nn.Linear(self.pos_encoder.out_dim, density_n_neurons, bias=False), 
                 nn.ReLU(), 
+                nn.Linear(density_n_neurons, density_n_neurons, bias=False),
+                nn.LeakyReLU(), 
                 nn.Linear(density_n_neurons, 16, bias=False))
             self.rgb_mlp = nn.Sequential(nn.Linear(self.dir_encoder.out_dim+16, rgb_n_neurons, bias=False),
                             nn.ReLU(),
